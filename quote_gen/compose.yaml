@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  web1:
+    build: /Users/mariakolesova/Downloads/week2-devops-main/quote_gen
+    container_name: gen
+    ports:
+      - "5000:5000"
+  web2:
+    build: /Users/mariakolesova/Downloads/week2-devops-main/quote_disp
+    container_name: disp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - web1
